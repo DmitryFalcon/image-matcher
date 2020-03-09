@@ -15,6 +15,16 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                        disableEmptyStrategyCheck: 'false',
+                        enableEmptyStrategyHelper: 'true',
+                        defaultMoxyStrategy      : 'moxy.viewstate.strategy.OneExecutionStateStrategy'
+                ]
+            }
+        }
     }
 
     buildTypes {
@@ -23,11 +33,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    /* Kotlin */
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    /* Android UI */
     implementation "androidx.core:core-ktx:$version_androidx_core_ktx"
     implementation "androidx.appcompat:appcompat:$version_app_compat"
     implementation "androidx.constraintlayout:constraintlayout:$version_app_constraint_layout"
@@ -54,4 +72,15 @@ dependencies {
 
     /* Worker */
     implementation "androidx.work:work-runtime-ktx:$version_workers"
+
+    /* Moxy */
+    implementation "com.github.moxy-community:moxy:$version_moxy"
+    implementation "com.github.moxy-community:moxy-androidx:$version_moxy"
+    kapt "com.github.moxy-community:moxy-compiler:$version_moxy"
+
+    /* Material dialogs */
+    implementation "com.afollestad.material-dialogs:core:$version_dialogs"
+
+    /* Logs */
+    implementation "com.jakewharton.timber:timber:$version_timber"
 }
