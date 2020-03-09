@@ -3,4 +3,12 @@
 
     <!--Common -->
     <string name="title_default_error">Error</string>
+    <string name="text_age_young">Under 20 years old</string>
+    <string name="text_age_middle">20 - 40 years old</string>
+    <string name="text_age_older">Over 40 years old</string>
+    <string name="title_form">Firstly fill the form below, please</string>
+    <string name="title_sex">Sex</string>
+    <string name="title_male">Male</string>
+    <string name="title_female">Female</string>
+    <string name="title_age">Age</string>
 </resources>

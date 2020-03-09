@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/padding_16"
+    android:paddingLeft="@dimen/padding_16"
+    android:paddingEnd="@dimen/padding_16"
+    android:paddingRight="@dimen/padding_16">
+
+    <TextView
+        android:id="@+id/form_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_54"
+        android:gravity="center"
+        android:text="@string/title_form"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title_sex_radios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_54"
+        android:paddingStart="@dimen/padding_6"
+        android:paddingLeft="@dimen/padding_6"
+        android:text="@string/title_sex"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/form_header" />
+
+    <RadioGroup
+        android:id="@+id/layout_sex_radios"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_sex_radios">
+
+        <RadioButton
+            android:id="@+id/radio_sex_male"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/title_male" />
+
+        <RadioButton
+            android:id="@+id/radio_sex_female"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_female" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/title_age_radios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_54"
+        android:paddingStart="@dimen/padding_6"
+        android:paddingLeft="@dimen/padding_6"
+        android:text="@string/title_age"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_sex_radios" />
+
+    <RadioGroup
+        android:id="@+id/layout_age_radios"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_age_radios">
+
+        <RadioButton
+            android:id="@+id/radio_age_young"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/text_age_young" />
+
+        <RadioButton
+            android:id="@+id/radio_age_middle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_age_middle" />
+
+        <RadioButton
+            android:id="@+id/radio_age_older"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_age_older" />
+    </RadioGroup>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/button_accept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_age_radios"
+        app:srcCompat="@drawable/ic_done" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,12 +19,12 @@ android {
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [
-                        disableEmptyStrategyCheck: 'false',
-                        enableEmptyStrategyHelper: 'true',
-                        defaultMoxyStrategy      : 'moxy.viewstate.strategy.OneExecutionStateStrategy'
+                        disableEmptyStrategyCheck: 'true',
                 ]
             }
         }
+
+        vectorDrawables.useSupportLibrary = true
     }
 
     buildTypes {
@@ -32,6 +32,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
     }
 
     kotlinOptions {
@@ -49,6 +54,8 @@ dependencies {
     implementation "androidx.core:core-ktx:$version_androidx_core_ktx"
     implementation "androidx.appcompat:appcompat:$version_app_compat"
     implementation "androidx.constraintlayout:constraintlayout:$version_app_constraint_layout"
+    implementation "com.google.android.material:material:$version_material"
+
 
     /* Glide */
     implementation "com.github.bumptech.glide:glide:$version_glide"
