@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SquareLayout">
+        <attr name="layout_orientation" format="flags">
+            <flag name="vertical" value="0" />
+            <flag name="horizontal" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>

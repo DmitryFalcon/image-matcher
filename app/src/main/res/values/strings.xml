@@ -11,4 +11,6 @@
     <string name="title_male">Male</string>
     <string name="title_female">Female</string>
     <string name="title_age">Age</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
 </resources>

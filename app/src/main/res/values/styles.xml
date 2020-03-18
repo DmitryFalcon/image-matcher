@@ -13,4 +13,18 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppTheme.Button" parent="@style/Widget.MaterialComponents.Button">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTheme.Button.OutLine" parent="@style/Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

@@ -6,6 +6,7 @@ import android.widget.RadioGroup
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.khpi.image_matcher.R
 import com.khpi.image_matcher.presentation.base.view.implementation.fragments.BaseProgressiveFragment
+import com.khpi.image_matcher.presentation.main.MainActivity
 import com.khpi.image_matcher.presentation.main.interfaces.QuestionaryView
 import moxy.presenter.InjectPresenter
 import moxy.presenter.ProvidePresenter
@@ -47,8 +48,9 @@ class QuestionaryFragment : BaseProgressiveFragment(), QuestionaryView {
 
     override val layoutResId: Int = R.layout.fragment_questionary
 
-    override fun navigateToMatchesScreen(data: Int) = Unit
-
+    override fun navigateToMatchesScreen(data: Int) {
+        (activity as? MainActivity)?.navigateToMatchingScreen(data)
+    }
 
     @ProvidePresenter
     fun injectPresenter(): QuestionaryPresenter {
