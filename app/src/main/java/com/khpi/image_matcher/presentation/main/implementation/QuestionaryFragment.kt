@@ -6,7 +6,7 @@ import android.widget.RadioGroup
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.khpi.image_matcher.R
 import com.khpi.image_matcher.presentation.base.view.implementation.fragments.BaseProgressiveFragment
-import com.khpi.image_matcher.presentation.main.MainActivity
+import com.khpi.image_matcher.presentation.MainActivity
 import com.khpi.image_matcher.presentation.main.interfaces.QuestionaryView
 import moxy.presenter.InjectPresenter
 import moxy.presenter.ProvidePresenter

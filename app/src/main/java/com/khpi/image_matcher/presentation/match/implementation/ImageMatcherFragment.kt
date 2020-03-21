@@ -26,7 +26,7 @@ class ImageMatcherFragment : BaseProgressiveFragment(), ImageMatcherView {
             return Bundle().apply { putInt(KEY_DATA, data) }
         }
 
-        fun newInstance(arguments: Bundle) : ImageMatcherFragment {
+        fun newInstance(arguments: Bundle): ImageMatcherFragment {
             val fragment = ImageMatcherFragment()
             fragment.arguments = arguments
             return fragment
@@ -41,6 +41,7 @@ class ImageMatcherFragment : BaseProgressiveFragment(), ImageMatcherView {
     private lateinit var recyclerView: RecyclerView
     private lateinit var matchedButton: Button
     private lateinit var notMatchedButton: Button
+    private lateinit var finishButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +57,10 @@ class ImageMatcherFragment : BaseProgressiveFragment(), ImageMatcherView {
         notMatchedButton = view.findViewById(R.id.button_not_matched)
         notMatchedButton.setOnClickListener {
             presenter.submitAnswer(adapter.items, false)
+        }
+        finishButton = view.findViewById(R.id.button_finish)
+        finishButton.setOnClickListener {
+            activity?.finish()
         }
         val margins = resources.getDimensionPixelOffset(R.dimen.margin_16)
         val decoration = GridItemMarginDecoration(margins, 2)

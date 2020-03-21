@@ -13,4 +13,16 @@
     <string name="title_age">Age</string>
     <string name="yes">yes</string>
     <string name="no">no</string>
+    <string name="next">Next</string>
+    <string name="finish">Finish</string>
+    <string name="text_question_app">What is this app for?</string>
+    <string name="text_description">This app is designed to monitor users mind activity and analyse their ability to distinguish pictures.\nOn results of passed test we can grade patience’s mind activity and decide does it need extra treatment or not</string>
+    <string name="text_question_phases">What should I do?</string>
+    <string name="text_phases_description">
+        Firstly you should pass a survey that contains such questions
+        \n1) What is your sex?
+        \n2) What is your age?
+        \nSecondary you should determine that contents of the images are the same.
+        \nThank you for your attention!
+    </string>
 </resources>

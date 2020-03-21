@@ -8,10 +8,7 @@ import com.khpi.image_matcher.data.utils.result.ErrorResult
 import com.khpi.image_matcher.data.utils.result.Success
 import com.khpi.image_matcher.presentation.base.presenter.BaseProgressivePresenter
 import com.khpi.image_matcher.presentation.match.interfaces.ImageMatcherView
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import moxy.InjectViewState
-import timber.log.Timber
 import kotlin.random.Random
 
 @InjectViewState
@@ -24,6 +21,7 @@ class ImageMatcherPresenter(
 
     private val random = Random.Default
     private var items: List<StorageReference> = emptyList()
+    private val session: String = "${System.currentTimeMillis()}"
 
     override fun onFirstViewAttach() = execute {
         super.onFirstViewAttach()
@@ -35,13 +33,12 @@ class ImageMatcherPresenter(
             }
         }
         val showingItems = loadUrls()
-        Timber.e("ITEMS $showingItems")
         viewState.onImagesReady(showingItems)
     }
 
     fun submitAnswer(images: List<StorageReference>, isMatched: Boolean) = execute {
         val data = MatchingModel(images.first().name, images.last().name, isMatched, data)
-        val result = progressive { database.insert(data) }
+        val result = progressive { database.insert(session, data) }
         if (result is ErrorResult) {
             viewState.showErrorDialog(result.data)
         }

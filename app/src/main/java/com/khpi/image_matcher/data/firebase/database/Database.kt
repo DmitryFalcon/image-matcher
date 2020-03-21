@@ -20,8 +20,10 @@ class Database(private val firebase: FirebaseDatabase = Firebase.database) {
     }
 
     @ExperimentalCoroutinesApi
-    suspend fun insert(model: MatchingModel) : PendingResult<*> = suspendCancellableCoroutine { continuation ->
-        firebase.reference.child(END_POINT).child("${System.currentTimeMillis()}").setValue(model) { error, reference ->
+    suspend fun insert(session: String, model: MatchingModel) : PendingResult<*> = suspendCancellableCoroutine { continuation ->
+        val child = "${System.currentTimeMillis()}"
+        val session = "$END_POINT/session-$session"
+        firebase.reference.child(session).child(child).setValue(model) { error, reference ->
             if (error == null) {
                 continuation.resume(Success(Unit)) {
                     continuation.resume(ErrorResult(errorCode = CODE_CANCELED, message = it.message))
